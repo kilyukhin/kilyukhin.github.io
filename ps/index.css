@@ -1,0 +1,17 @@
+table, table th, table td {
+    font-family: Palatino, sans-serif;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+table td:not(:first-child) {
+    text-align: right;
+}
+table th, table td {
+    padding: 4px 8px;
+}
+table th {
+    font-weight: normal;
+}
+table thead {
+    background-color: #eee;
+}
