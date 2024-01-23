@@ -2,14 +2,18 @@
     font-family: Church;
     src: url('Triodion.woff2');
 }
-table, table th, table td {
+body {
     font-family: Palatino, sans-serif;
+}
+.s {
+    font-family: Church;
+    font-size: 150%;
+}
+table, table th, table td {
     border-collapse: collapse;
     border: 1px solid #ccc;
 }
 table td:not(:first-child) {
-    font-family: Church;
-    font-size: 150%;
     text-align: right;
 }
 table th, table td {
@@ -20,4 +24,23 @@ table th {
 }
 table thead {
     background-color: #eee;
+}
+#numbers {
+    padding-top: 5em;
+    display: table;
+}
+#numbers div {
+    display: table-row;
+}
+#numbers div span {
+    display: table-cell;
+}
+#numbers div span:first-child {
+    text-align: start;
+}
+#numbers div span:nth-child(2) {
+    padding: 0 5px 0 5px;
+}
+#numbers div span:last-child {
+    text-align: end;
 }

@@ -60,7 +60,7 @@
             html += '<tr><td>' + names[row] + '</td>';
             for (let col = 0; col < columnCount; col++) {
                 const d = (todayIndex + col + 100) % kathismsCount;
-                html += '<td>' + getSlavonic(kathismas[row][d]) + '</td>';
+                html += '<td class="s">' + getSlavonic(kathismas[row][d]) + '</td>';
             }
             html += '</tr>';
         }
@@ -69,6 +69,16 @@
         const div = document.createElement('table');
         div.innerHTML = html;
         document.getElementById('table').appendChild(div);
+
+        createNumberDictionary();
+    }
+
+    function createNumberDictionary() {
+        let html = '';
+        for (let n = 0; n < slavonic.length; n++) {
+            html += '<div><span class="s">' + slavonic[n] + "</span><span> – </span><span>" + (n + 1) + "</span></div>"
+        }
+        document.getElementById('numbers').innerHTML = html;
     }
 
     createDocument();
