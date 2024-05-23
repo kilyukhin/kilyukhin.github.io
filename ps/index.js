@@ -5,24 +5,18 @@
         "Люда",
         "Саша Лукова",
         "Таня",
+        "Лена Илюхина",
         "Лена",
-        "Саша Васильева",
-        "Ольга",
         "Олег",
     ];
     const kathismas = [
         [ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,],
-        [ 4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,  1,  2,  3,],
-        [ 7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,  1,  2,  3,  4,  5,  6,],
-        [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,  1,  2,  3,  4,  5,  6,  7,  8,  9,],
-        [13, 14, 15, 16, 17, 18, 19, 20,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12,],
-        [16, 17, 18, 19, 20,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15,],
-        [19, 20,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18,],
+        [ 5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,  1,  2,  3,  4,],
+        [ 8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,  1,  2,  3,  4,  5,  6,  7,],
+        [12, 13, 14, 15, 16, 17, 18, 19, 20,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11,],
+        [15, 16, 17, 18, 19, 20,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14,],
+        [18, 19, 20,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,],
     ];
-    const slavonic = [
-        "№", "в7", "G", "д7", "є7", "ѕ7", "з7", "}", "f7", "‹",
-        "№i", "в7i", "Gi", "д7i", "є7i", "ѕ7i", "з7i", "}i", "f7i", "к7",
-        ];
 
     function daysBetween(startDate, endDate) {
         const start = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate());
@@ -33,10 +27,6 @@
     function getTodayIndex() {
         const diff = daysBetween(new Date(2023, 11 - 1, 21), new Date());
         return diff % kathismsCount;
-    }
-
-    function getSlavonic(n) {
-        return slavonic[n - 1];
     }
 
     function createDocument() {
@@ -60,7 +50,7 @@
             html += '<tr><td>' + names[row] + '</td>';
             for (let col = 0; col < columnCount; col++) {
                 const d = (todayIndex + col + 100) % kathismsCount;
-                html += '<td class="s">' + getSlavonic(kathismas[row][d]) + '</td>';
+                html += '<td class="s">' + kathismas[row][d] + '</td>';
             }
             html += '</tr>';
         }
@@ -69,16 +59,6 @@
         const div = document.createElement('table');
         div.innerHTML = html;
         document.getElementById('table').appendChild(div);
-
-        createNumberDictionary();
-    }
-
-    function createNumberDictionary() {
-        let html = '';
-        for (let n = 0; n < slavonic.length; n++) {
-            html += '<div><span class="s">' + slavonic[n] + "</span><span> – </span><span>" + (n + 1) + "</span></div>"
-        }
-        document.getElementById('numbers').innerHTML = html;
     }
 
     createDocument();

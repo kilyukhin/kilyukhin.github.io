@@ -1,13 +1,8 @@
-@font-face {
-    font-family: Church;
-    src: url('Triodion.woff2');
-}
 body {
     font-family: Palatino, sans-serif;
 }
 .s {
-    font-family: Church;
-    font-size: 150%;
+    font-size: 120%;
 }
 table, table th, table td {
     border-collapse: collapse;
