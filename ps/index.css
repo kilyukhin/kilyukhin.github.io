@@ -20,22 +20,10 @@ table th {
 table thead {
     background-color: #eee;
 }
-#numbers {
-    padding-top: 5em;
-    display: table;
+#commemoration .title {
+    margin-top: 2em;
 }
-#numbers div {
-    display: table-row;
-}
-#numbers div span {
-    display: table-cell;
-}
-#numbers div span:first-child {
-    text-align: start;
-}
-#numbers div span:nth-child(2) {
-    padding: 0 5px 0 5px;
-}
-#numbers div span:last-child {
-    text-align: end;
+#commemoration .names {
+    padding-top: 1em;
+    line-height: 1.4;
 }
