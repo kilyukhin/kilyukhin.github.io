@@ -1,0 +1,30 @@
+body {
+    font-family: Palatino, sans-serif;
+    font-size: 120%;
+}
+table, table th, table td {
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+table td:not(:first-child) {
+    text-align: right;
+}
+table th, table td {
+    padding: 4px 8px;
+}
+table th {
+    font-weight: normal;
+}
+table thead {
+    background-color: #eee;
+}
+#commemoration .title {
+    margin-top: 2em;
+}
+#commemoration .names {
+    padding-top: 1em;
+    line-height: 1.4;
+}
+.prayer {
+    font-style: oblique;
+}
